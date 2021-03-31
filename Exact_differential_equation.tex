@@ -1,0 +1,156 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\linespread{1.5}
+\author{ola}
+\begin{document}
+	\textbf{ZADANIE 1} 
+    \begin{center}
+	\text{Sprawdzam czy rówananie jest zupełne}\\
+	$\frac{x dx}{(x^2+y^2)^{\frac{3}{2}}} + \frac{y dy}{(x^2+y^2)^{\frac{3}{2}}} = 0$ \\
+	$\frac{x}{(x^2+y^2)^{\frac{3}{2}}} dx + \frac{y}{(x^2+y^2)^{\frac{3}{2}}} dy = 0 $ \\
+	\textbf{Korzystamy ze wzoru na równanie zupełne:} \\
+    \textbf{ M(x,y) dx + N(x,y) dy = 0} \\
+	$M(x,y) = \frac{x}{(x^2+y^2)^{\frac{3}{2}}}$ \\
+	$N(x,y) = \frac{y}{(x^2+y^2)^{\frac{3}{2}}}$ \\
+	\textbf{Krok 1} \\
+	\text{Musimy sprawdzić czy odpowiednie pochodne M(x,y) oraz N(x,y) sa równe} \\
+	$M_{y}(x,y) = \frac{-3xy}{(x^2+y^2)^{\frac{5}{2}}}$ \\
+	$N_{x}(x,y) = \frac{-3xy}{(x^2+y^2)^{\frac{5}{2}}}$ \\
+	\text{Zatem pochodne $M_{y} = N_{x}$} \\
+	\textbf{Krok 2}\\
+	$F(x,y) = \frac{x dx}{(x^2+y^2)^{\frac{3}{2}}} + \frac{y dy}{(x^2+y^2)^{\frac{3}{2}}} $ \\
+	$\frac{dF}{dy} = N \qquad \frac{dF}{dx}=M $\\
+	\text{Całkuje $\int N(x,y) dy$} \\
+	$F(x,y) = \int \frac{y}{(x^2+y^2)^{\frac{3}{2}}} dy + \phi$ \\
+	$F(x,y) = \frac{-1}{\sqrt{(x^2+y^2)}} +\phi (x) $ \\
+	$\frac{d [\frac{-1}{\sqrt{(x^2+y^2)}}] }{dx} +\phi' (x) = M(x,y) $ \\
+	$\frac{x}{(x^2+y^2)^{\frac{3}{2}}} + \phi'(x) = \frac{x}{(x^2+y^2)^{\frac{3}{2}}}$ \\
+	$\phi'(x) = 0$ \\
+	\text{Ostateczne rozwiazanie:}\\
+	$\frac{-1}{\sqrt{(x^2+y^2)}} = C$
+	\newpage
+
+    \end{center} 
+	\textbf{ZADANIE 2} 
+	\begin{center}
+		$(\sin x - y\sin x - 2\cos x)dx + \cos x dy = 0 $ \\
+		$M(x,y) = \sin x - y\sin x - 2\cos x$ \\
+		$N(x,y) = \cos x$ \\
+		$M_{y} = -\sin x = N_{x}$ \\
+		\text{Pochodne sa równe zatem przechodzimy dalej}\\
+		$\frac{dF}{dy} = N \qquad \frac{dF}{dx} = M$ \\ 
+		$F(x,y) = \int N(x,y) dy + \phi (x)$ \\
+		$F(x,y) = \int \cos x dy + \phi (x)$ \\
+		$F(x,y) = y\cos x + \phi (x)$ \\
+		$\frac{d [y\cos x]}{dx} = \phi'(x) = M(x,y) $ \\
+		$-y\sin x + \phi' (x) = \sin x - y\sin x - 2\cos x$ \\
+		$\phi'(x) = \sin x - 2\cos x $ \\
+		$\int \phi'(x) dx = \int (\sin x - 2\cos x) dx $ \\
+		$\phi (x) = -\cos x - 2sin x + C$ \\
+		$F(x,y) = y\cos x - \cos x - 2\sin x + C$ \\
+		$y(0)=1  \qquad y=\frac{\cos x + 2\sin x}{\cos x} + C$ \\
+		$1 = \frac{1 + 0}{1} + C$ \\
+		$C = 0 $ \\
+		\text{Zatem ostateczne rozwiazanie to:}\\
+		$F(x,y) = y\cos x - \cos x - 2\sin x  $
+		
+	\newpage
+	\end{center}
+	\textbf{ZADANIE 3}
+	\begin{center}
+		$F(x,y) = \int_{0}^{x} M(s,y_{0}) ds + \int_{0}^{y} N(x,t) dt $ \\
+		\textbf{Twierdzenie o funkcji górnej granicy całkowania} \\
+		\text{Niech $f:[a,b]\rightarrow \mathbb{R}$ bedzie funkcja całkowalna w [a,b]. Zdefiniujmy funkcje $F:[a,b]\rightarrow \mathbb{R}$ za pomoca} \\
+		$F(x) = \int_{x}^{a}$ dla $x \in [a,b]$ \\ 
+		\text{Wówczas: }\\
+		\text{funkcja F jest ciagła oraz jeżeli f jest funkcja ciagła w punkcie $x_{0} \in [a,b]$,}\\
+		\text{to funkcja F jest funkcja różniczkowalna w punkcie $x_{0}$ oraz }\\
+		$F'(x_{0}) = f(x_{0}) $ \\
+		\textbf{Twierdzenie o różniczkowaniu całki wzgledem parametru } \\
+		\text{Niech $F:\mathbb{G} \rightarrow \mathbb{R} $ beda funkcja klasy $C^{1}$ w obszarze }\\
+		\text{$\mathbb{G} \subset \mathbb{R} $ i niech prostokat R bedzie zawarty w $\mathbb{G}$ }\\
+		\text{Wówczas: $f(y)= \int_{a}^{b} F(x,y) dx $ jest różniczkowalna i $f'(y) = \int_{a}^{b}F'(x,y) dx $} \\
+		\text{Korzystajac z powyzszych Twierdzen oraz z faktu, że odpowienie pochodne F(x,y)sa równe }\\
+		\text{$M_{y} = N_{x}$ mamy:} \\
+		$F_{x}(x,y) = M(x,y_{0}) + \int_{y_{0}}^{y} Q_{x}(x,t)dt = M(x,y_{0}) + \int_{y_{0}}^{y} P_{y}(x,t) dt =  $\\
+		$M(x,y_{0}) + M(x,y) - M(x,y_{0}) = M(x,y)$ \\
+		$F_{y}(x,y) = \int_{x_{0}}^{x} M_{y}(s,y_{0}) ds + N(x,y_{0}) = \int_{x_{0}}^{x} N_{x}(s,y_{0}) ds =$\\
+		$= N(x,y) - N(x,y_{0}) + N(x,y_{0}) = N(x,y) $ \\
+		\text{Zatem $F_{x} = M $ oraz $F_{y} = N$}
+		
+		
+	\newpage
+	\end{center}
+	\textbf{ZADANIE 4}
+	\begin{center}
+		$(x_{0} + y_{0}) = (0,0) $ \\
+		$\underbrace{(x^3y^4 + x)}_{M(x,y)}dx + \underbrace{(x^4y^3 + y)}_{N(x,y)}dy = 0 $\\
+		$M_{y} = 4x^3y^3 \qquad N_{x} = 4x^3y^3$ \\
+		\text{Zatem rówanie jest zupełne.} \\
+		\text{Korzystajac z twierdzenia mamy:} \\
+		$M(x,y) = x^3y^4 + x = s^3\cdot 0^4 + s = M(s,y_{0}) = s$ \\ 
+		$N(x,y) = x^4y^3 + y = x^4t^3 + t = N(x,t) $ \\ 
+		$F(x,y) = \int_{0}^{x} M(s,0) ds + \int_{0}^{y} N(x,t) dt = $ \\
+		$=\frac{s^2}{2} \Bigg|_{0}^{x} + x^4\frac{t^4}{4} \Bigg|_{0}^{y} + \frac{t^2}{2} \Bigg|_{0}^{y} =$ \\
+		$=\frac{x^2}{2} - 0 + x^4\frac{y^4}{4} - 0 + \frac{y^2}{2} - 0 = \frac{x^2}{2} + x^4\frac{y^4}{4}  + \frac{y^2}{2}$ \\
+		\text{Ostateczne rozwiazanie}\\
+		$\frac{x^2}{2} + \frac{1}{4}x^4y^4  + \frac{y^2}{2} = C $
+	
+	
+	
+	\newpage	
+	\end{center}		
+	\textbf{ZADANIE 5}
+	\begin{center}
+		$(xy + x +2y +1) dx + (x + 1)dy = 0$ \\
+		\textbf{Korzystajac z twierdzenia: } \\
+		\text{Jeżeli} \\
+		$\frac{1}{N}(\frac{dM}{dy} - \frac{dN}{dx})$ \\ 
+		\text{jest funkcja zależna wyłacznie od zmiennej x to istnieje czynnik całkujacy $\mu = \mu (x) $ jest on postaci} \\
+		$\mu (x) = \exp(\int (\frac{1}{N}(\frac{dM}{dy} - \frac{dN}{dx})) dx )  $ \\
+		\text{lub analogicznie} \\
+		$\frac{1}{M}(\frac{dN}{dx} - \frac{dM}{dy})$ \\ 
+		\text{to: $\mu (x) = \exp(\int (\frac{1}{M}(\frac{dN}{dx} - \frac{dM}{dy})) dx )  $} \\
+		
+	    \text{Wracajac do zadania, mamy}\\
+	    $M(x,y) = xy + x +2y + 1 \qquad N(x,y) = x+1 $ \\
+	    $M_{y} = x + 2 \qquad N_{x} = 1$
+	    $\frac{1}{N}(\frac{dM}{dy} - \frac{dN}{dx}) = \frac{1}{(x+1)(x + 2 - 1)} = \frac{x+1}{x+1} = 1$\\
+	    \text{Zatem $ \mu = \mu (x) = \exp (\int 1 dx) = e^x$} \\
+	    \text{Wracam do rówaniania: $ F(x,y) = M(x,y)\mu(x) dx + N(x,y)\mu (x) dy $}\\
+	    $(xy + x +2y +1)e^x dx + (x + 1)e^xdy = 0$ \\
+	    $P(x,y) = (xy + x +2y +1)e^x \qquad Q(x,y) = (x+1)e^x$ \\
+	    $P_{y} = xe^x + 2e^x  \qquad Q_{x} = xe^x + e^x+e^x = xe^x + 2e^x$ \\
+	    \text{Odpowiednie pochodne sa równe zatem:} \\
+	    $\frac{dF}{dy} = Q \qquad \frac{dF}{dx} = P $ \\
+	    \text{Wybieram $\frac{dF}{dy} = Q $} \\
+	    $\int (xe^x + e^x) dy = (xe^x + e^x)y + \phi (x) $ \\
+	    $\frac{d[(xe^x + e^x)y + \phi (x)]}{dx} = P(x,y)$ \\
+	    $xye^x + 2ye^x + \phi'(x) =  xye^x + xe^x +2ye^x + e^x$ \\
+	    $\phi'(x) = xe^x + e^x $ \\
+	    $\phi (x) = \int xe^x dx + \int e^x dx$ \\
+	    $$\int xe^x dx = 
+	    \left| \begin{array}{c}
+	    f' = e^x \qquad g=x\\
+	    f = e^x \qquad g'=1\\
+	    \end{array} \right| = xe^x -\int e^x dx = xe^x - e^x + C
+	    $$ \\
+	    $\phi (x) = xe^x - e^x + e^x = xe^x + C \qquad C \in \mathbb{R}$ \\
+	    $F(x,y) = (xe^x + e^x)y + xe^x + C $\\ 
+	    $y= \frac{-xe^x - C}{xe^x + e^x}$
+	    
+	    
+	\newpage 	
+	\end{center}		
+\end{document}
+
+
+
+
+
+	
+

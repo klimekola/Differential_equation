@@ -1,0 +1,272 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\selectlanguage{polish}
+\author{ola}
+\begin{document}
+	\textbf{Zadanie 1} \\
+	$y'' + 4y' +3y = -e^{-x}(2+8x) $ \\
+	$y'' + 4y' +3y = e^{-x}(-2-8x) $ \\
+	Wielomian charakterystyczny to: \\
+	$p(r) = rY^2 + 4r + 3 = (r+1)(r+3)$ \\
+	Zatem $y_{1}= e^{-x}$ oraz $ y_{2} = e^{-3x}$ są zbiorem fundamentalnym.
+	Podstawiam $y = ue^{-x} $  \\
+	$y'=u'e^{-x} - ue^{-x} $ \\
+	$y''=u''e^{-x} -2u'e^{-x} + ue^{-x} $	  \\
+	Podstawiając do równaian głównego mamy: \\
+	$u''e^{-x} -2u'e^{-x} + ue^{-x} + 4(u'e^{-x} - ue^{-x}) + 3ue^{-x} = e^{-x}(-2-8x) $ \\
+	$u'' -2u' + u + 4u'-4u + 3u = -2-8x $ \\
+	$u'' + 2u' = -2 -8x $ \\
+	$u_{p} = Bx + Cx^2$ \\
+	$u_{p}' = B + 2Cx$ \\
+	$u_{p}'' =  2Cx$ \\
+	
+	Zatem mamy\\
+	$2C + 2(B+ 2Cx) = -2 -8x $\\
+	$$ 
+	\left\{ \begin{array}{l}
+	2B + 2C = -2 \\
+	4C = -8
+	\end{array}\right. 
+	$$
+	$$ 
+	\left\{ \begin{array}{l}
+	C = -2 \\
+	2B = -2 +4 
+	\end{array}\right. 
+	$$
+	$$ 
+	\left\{ \begin{array}{l}
+	C = -2 \\
+    B = 1 
+	\end{array}\right. 
+	$$
+	
+	$u_{p} = x - 2x^2 $ \\
+	$y_{p} = e^{-x}(x - 2x^2)$
+	
+	Zatem \\
+	$y = e^{-x}(x - 2x^2) + c_{1}e^{-x} + c_{2}e^{-3x} $ \\
+	$y' = -e^{-x}(1 - 4x) - c_{1}e^{-x} -3c_{2}e^{-3x} $ \\
+	Podstawiając $y(0) = 1, \quad y'(0) = 2 $ mamy \\
+	$$ 
+	\left\{ \begin{array}{l}
+	c_{1} + c_{2} = 1\\
+	 - c_{1} -3c_{2} = 2
+	\end{array}\right. 
+	$$
+		$$ 
+	\left\{ \begin{array}{l}
+	c_{1}  = \frac{5}{2}\\
+	c_{2} = -\frac{3}{2}
+	\end{array}\right. 
+	$$
+	
+	Ostatecznie otrzymujemy: \\
+	$y = e^{-x}(x - 2x^2) + \frac{5}{2}e^{-x} - \frac{3}{2}e^{-3x} $
+	
+	\newpage
+	\textbf{Zadanie 2} \\
+	$y'' + 3y' + y = (2 - 6x)\cos x - 9\sin x $ \\
+	W powyższym równaniu współczynniki $\cos x$ oraz $\sin x$ są wielomianami stopnia pierwszego i zerowego. \\ 
+	Dlatego Twierdzenie 9.5.1 każe nam szukać rozwiązania szczególnego postaci:\\
+	$y_{p} = (A_{0} + A_{1}x)\cos x + (B_{0} + B_{1}x)\sin x $ \\
+	Wtedy: \\
+	$y_{p}' = (A_{1} + B_{0} + B_{1}x)\cos x + (B_{1} - A_{0} - A_{1}x)\sin x $ \\
+	$y_{p}'' = (2B_{1} - A_{0} - A_{1}x)\cos x + (2A_{1} + B_{0} + B_{1}x)\sin x $ \\
+	Więc: \\
+	$y'' + 3y' + y = (2B_{1} - A_{0} - A_{1}x)\cos x + (2A_{1} + B_{0} + B_{1}x)\sin x + 3(A_{1} + B_{0} + B_{1}x)\cos x + 3(B_{1} - A_{0} - A_{1}x)\sin x + (A_{0} + A_{1}x)\cos x + (B_{0} + B_{1}x)\sin x = $  $ (2B_{1} - A_{0} - A_{1}x)\cos x + (2A_{1} + B_{0} + B_{1}x)\sin x + (3A_{1} + 3B_{0} + 3B_{1}x)\cos x + (3B_{1} - 3A_{0} - 3A_{1}x)\sin x + (A_{0} + A_{1}x)\cos x + (B_{0} + B_{1}x)\sin x = $  $ (2B_{1} - A_{0} - A_{1}x + 3A_{1} + 3B_{0} + 3B_{1}x + A_{0} + A_{1}x)\cos x +(-2A_{1} - B_{0} - B_{1}x + 3B_{1} - 3A_{0} - 3A_{1}x + B_{0} + B_{1}x)\sin x =  $ $ (3A_{1} + 3B_{0} + 2B_{1} + 3B_{1}x)\cos x + ( - 2A_{1} - 3A_{1}x - 3A_{0} + 3B_{1})\sin x $ \\
+	
+	\textcolor{blue}{Ostatecznie mamy} \\
+	$ (3A_{1} + 3B_{0} + 2B_{1} + 3B_{1}x)\cos x + ( - 2A_{1} - 3A_{1}x - 3A_{0} + 3B_{1})\sin x $\\
+	
+	$$ 
+	\left\{ \begin{array}{l}
+	3B_{1}= -6 \\
+	3A_{1} + 3B_{0} + 2B_{1} = 2 \\
+	-3A_{1} = 0 \\
+	-2A_{1} - 3A_{0} + 3B_{1} = -9
+	\end{array}\right. 
+	$$
+	$$ 
+	\left\{ \begin{array}{l}
+	B_{1}= -2 \\
+	A_{1} = 0 \\
+	3B_{0} - 4 = 2 \\
+	-3A_{0} -6 = -9
+	\end{array}\right. 
+	$$
+	$$ 
+	\left\{ \begin{array}{l}
+	B_{1}= -2 \\
+	A_{1} = 0 \\
+	3B_{0} = 6 \\
+	-3A_{0} = -3
+	\end{array}\right. 
+	$$
+	$$ 
+	\left\{ \begin{array}{l}
+	B_{1}= -2 \\
+	A_{1} = 0 \\
+	B_{0} = 2 \\
+	A_{0} = 1
+	\end{array}\right. 
+	$$
+	
+	Podstawienie tych wartości daje: \\
+	$y_{p} = (1 + 0x)\cos x + (2-2x)\sin x $ \\
+	\textcolor{blue}{$y_{p} = \cos x + (2-2x)\sin x $  Jest rozwiązaniem szczególnym. } \\
+    \newpage
+    
+    \textbf{Zadanie 3} \\
+    Rozwiąż problem początkowy 
+    $y'' +4y' + 4y = 2\cos 2x + 3\sin 2x + e^{-x}$, \\$ y(0) = -1, \qquad y'(0) = 2$ \\
+    Równanie charakterystyczne równania stowarzyszonego: $y'' +4y' + 4y $ to\\
+    $p(r) = r^2 + 4r + 4 = (r+2)^2$. Zatem $ y_{1} = e^{-2x}$ jest rozwiązaniem. \\
+    
+    Równanie ma tylko jeden pierwiastek podwójny, zatem szukamy rozwiązania postaci $ y = uy_{1}, u $ jest funkcją.
+    Jeżeli $y = ue^{-2x}$, to \\
+    $y' = u'e^{-2x} -2ue^{-2x}$ \\
+    $y'' = u''e^{-2x} -4u'e^{-2x} + 4ue^{-2x} $\\
+    więc :
+    $y'' +4y' + 4y = u''e^{-2x} -4u'e^{-2x} + 4ue^{-2x} + 4(u'e^{-2x} -2ue^{-2x}) + 4ue^{-2x} = e^{-2x}[u'' - 4u' + 4u + 4u' - 8u + 4u] = u''e^{-2x}$ \\
+    
+    Dlatego $y = ue^{-2x} $ jest rozwiązaniem $y'' +4y' + 4y $ wtedy i tylko wtedy, gdy $u''=0$ z czego wynika że $u = c_{1} + c_{2}x$. Rozwiązanie rówanania stowarzyszonego jest postaci \\
+    $y= e^{-2x}(c_{1}+ c_{2}x)$ \\
+    
+    Wracając do równania początkowego, współczynniki $\cos 2x$ oraz $\sin 2x$ są wielomianami zerowymi. Dlatego twierdzenie 9.5.1 każe nam szukać rozwiązania szczególnego postaci:\\
+    $y_{p1} = A \cos 2x + B \sin 2x $ \\
+    $y_{p1}' = -2A \sin 2x + 2B \cos 2x $ \\
+    $y_{p1}'' = -4A \cos 2x -4B \sin 2x $ \\
+    zatem: $y_{p1}'' + 4y_{p1} + 4y = -4A \cos 2x -4B \sin 2x + 4(-2A \sin 2x + 2B \cos 2x ) + 4(A \cos 2x + B \sin 2x ) = (-4A + 8B + 4A)\cos 2x + (-4B -8A  + 4B)\sin 2x = -8 \sin 2x + 8B \cos 2x$.
+    
+    Przyrównujemy kolejnie współćzynniki do równania \\
+    	$$ 
+    \left\{ \begin{array}{l}
+    -8A = 3 \qquad A=\frac{-3}{8}\\
+    8B = 2 \qquad A=\frac{1}{4}
+    \end{array}\right.
+    $$
+    Zatem szczególne rozwiązanie równania  $y'' +4y' + 4y = 2\cos 2x + 3\sin 2x $ to: \\
+    $y_{p1}= -\frac{3}{8}\cos 2x + \frac{1}{4} \sin 2x. $\\
+     
+    Rozwiązanie szczególne dla  $y'' +4y' + 4y = e^{-x} $: \\
+    Podstawiamy $y_{k} = Ae^{-x} $ \\
+    $y_{p2}' = -Ae^{-x} $\\
+    $y_{p2}'' = Ae^{-x} $\\
+    Zatem $y_{p2}'' +4y_{p2}' + 4y_{p2} = Ae^{-x} - 4Ae^{-x} + Ae^{-x} = Ae^{-x} $ \\
+    $Ae^{-x} = e^{-x} \qquad A=1$ \\
+    Zatem mamy $y_{p2} = e^{-x}$ jest rozwiązaniem szczególnym równania \\ $y'' +4y' + 4y = e^{-x} $.
+    
+    Z Twierdzenia 9.3.3 wiemy, że $y_{p} = y_{p1} + y_{p2} $. Zatem otrzymaliśmy: \\
+    $y_{p}= -\frac{3}{8}\cos 2x + \frac{1}{4} \sin 2x + e^{-x} $ \\.
+    Z Twierdzenia 9.3.2 wiemy, że $y = yp + c_{1}y_{1} + c_{2}y_{2} $ jest rozwiązaniem równania.\\
+    Zatem równianaie ogólne ma postać\\
+    $y = -\frac{3}{8}\cos 2x + \frac{1}{4} \sin 2x + e^{-x} + e^{-2x}(c_{1} + c_{2}x)$ \\
+    $y' = \frac{3}{4}\sin 2x + \frac{1}{2} \cos 2x - e^{-x} - 2c_{1}e^{-2x} - 2c_{2}e^{-2x}x + c_{2}e^{-2x}$ \\
+    \newpage
+    Podstawiając $y(0) = -1 $ oraz $y'(0) = 2$ mamy: \\
+    $$ 
+    \left\{ \begin{array}{l}
+    -\frac{3}{8} + 1 + c_{1}  = -1 \\
+     \frac{1}{2}  - 1 - 2c_{1} + c_{2} = 2
+    \end{array}\right. 
+    $$
+     $$ 
+    \left\{ \begin{array}{l}
+     c_{1}  = -2 + \frac{3}{8} \\
+    -2c_{1} + c_{2} = 2\frac{1}{2}
+  	\end{array}\right. 
+	$$
+	 $$ 
+	\left\{ \begin{array}{l}
+	c_{1}  = -\frac{13}{8} \\
+	c_{2} = -\frac{3}{4}
+	\end{array}\right. 
+	$$
+	Zatem rozwiązaniem końcowym jest: \\
+	$y = -\frac{3}{8}\cos 2x + \frac{1}{4} \sin 2x + e^{-x} + e^{-2x}(-\frac{13}{8} - \frac{3}{4}x)$
+    
+    
+    \newpage 
+    
+ 	\textbf{Zadanie 4} \\
+ 	$y'' - 3y' + 2y = \frac{4}{1+e^{-x}}$ \\
+ 	Wielomian charakterystyczny równania stowarzyszonego \\
+ 	$y'' - 3y' + 2y = 0$ \\	
+ 	$r^2 - 3r + 2 = (r - 2)(r - 1)$ \\	
+ 	Zatem $ y_{1} = e^x$ oraz $y_{2} = e^{2x} $ jest zbiorem fundamentalny. \\
+ 	Szukamy rozwiązania postaci: \\
+ 	$y_{p} = u_{1}e^x + u_{2}e^{2x} $ \\
+ 	$$ 
+ 	\left\{ \begin{array}{l}
+ 	u_{1}'e^x + u_{2}'e^{2x} = 0 \\
+    u_{1}'e^x + 2u_{2}'e^{2x} = \frac{4}{1 + e^{-x}} 
+ 	\end{array}\right. 
+ 	$$
+ 	\begin{center}
+ 	$u_{1}'e^x = - u_{2}'e^{2x} $ \\
+ 	$-u_{2}'e^{2x} + 2u_{2}'e^{2x} = \frac{4}{1 + e^{-x}} $ \\
+ 	$u_{2}'e^{2x} = \frac{4}{1 + e^{-x}} $  \\
+ 	$u_{1}'e^{x} = \frac{ - 4}{1 + e^{-x}} $ \\
+ 	\end{center}
+ 
+	$$ 
+	\left\{ \begin{array}{l}
+	u_{1}' = \frac{-4e^{-x}}{1 + e^{-x}} \\
+    u_{2}' = \frac{ 4e^{-2x}}{1 + e^{-x}}
+	\end{array}\right.
+	$$
+	$\int \frac{-4e^{-x}}{1 + e^{-x}} dx = -4 \int \frac{e^{-x}}{1 + e^{-x}} dx = \Big|_{-e^{-x}dx = dv}^{e^{-x} = v}  \Big|  = -4 \int \frac{-dv}{1+v} = 4 \int \frac{dv}{1+v} = 4\ln|1+v| + C_{1}= 4\ln(1+e^{-x}) + C_{1} $ \\
+	$\int \frac{4e^{-2x}}{1 + e^{-x}} dx= \Big|_{-e^{-x}dx = dv}^{e^{-x} = v}  \Big|  = 4 \int (\frac{-v }{1+v}) dv = -4 \int (\frac{v +1 -1 }{1+v}) dv = -4 \int (\frac{-1}{1 + v} + 1) dv = \int (\frac{4}{1 + v} - 4 )dv= 4\ln|1+v| - 4v+ C_{1}= 4\ln(1+e^{-x}) -4e^{-x} + C_{2} $ \\
+	Dlatego: \\
+	$y_{p} = u_{1}e^x + u_{2} e^{2x} = 4\ln(1+e^{-x})e^x + (4\ln(1+e^{-x}) -4e^{-x})e^{2x} =$ \\$ = (e^x + e^{2x})4\ln(1 + e^{-x}) - 4e^{x} $ \\
+	Ogólne rozwiązanie to: \\
+	$y = y_{p} + C_{1}e^{x} + C_{2}e^{2x} = (e^x + e^{2x})4\ln(1 + e^{-x}) - 4e^{x} + C_{1}x + C_{2}x  $
+	
+	\newpage
+
+	\textbf{Zadanie 5} \\
+	$y_{1} = x \qquad y_{2} = \frac{1}{x} $ \\
+	są zbiorem fundamentalnym rozwiązań równania niejednorodnego stowarzyszonego równaniem: \\
+	$x^2y'' + xy' - y = 2x^2 + 2 $ \\
+	
+	\textbf{Dowód:} \\
+	$y_{1}' = 1 \qquad y_{2}' = \frac{-1}{x^2} $ \\
+	$y_{1}'' = 0 \qquad y_{2}'' = \frac{2}{x^3} $ \\ 
+	
+	Podstawiam  wartości dla $y_{1} $ \\
+	$0 \cdot x^2 + x - x = 0$ \\
+	$ 0 = 0 $\\
+	Podstawiamy wartości dla $y_{2}$ \\
+	$\frac{2}{x^3}x^2 + x\frac{-1}{x^2} - \frac{1}{x} = 0$\\
+	$\frac{2}{x} - \frac{1}{x} - \frac{1}{x} = 0$\\ 
+	$ 0 = 0 $  
+	
+	Co należało dowieść. \\
+	Jeżeli $ y = ux$, jest rozwiązaniem tylko wtedy gdy \\
+	$x^3u'' + 3x^2u' = 2x^2 + 2 $ \\
+	$u'' + \frac{3u'}{x} = \frac{2}{x} + \frac{2}{x^3}$ \\
+	
+	Aby skupić się na tym w jaki sposób stosujemy uzmiennianie stałej do tego równania tymczasowego, zapisujemy $z = u'$, tak aby $u'' + \frac{3u'}{x} = \frac{2}{x} + \frac{2}{x^3}$ stało się: \\
+	$z' + \frac{3z}{x} = \frac{2}{x} + \frac{2}{x^3}$ \\
+	$z' + \frac{3z}{x} = 0 $ \\
+	$z = \frac{v}{x^3} $, gdzie $\frac{v'}{x^3} = \frac{2}{x} + \frac{2}{x^3} $ więc $v' = 2x^2 + 2$ \\
+	$\int (2x^2 + 2) dx = \frac{2x^3}{3} + 2x + C_{1} $ \\
+	ponieważ $u' = z = \frac{v}{x^3} $ , $u$ jest rozwiązaniem wtedy i tylko wtedy, gdy \\
+	$u' = \frac{v}{x^3} = \frac{2}{3} + \frac{2}{x^2} + \frac{C_{1}}{x^3}$ \\
+	Całkowanie tego daje \\
+	$\int \frac{2}{3} + \frac{2}{x^2} + \frac{C_{1}}{x^3} = \frac{2x}{3} - \frac{2}{x} - \frac{C_{1}}{2x^2} + C_{2} $ \\
+	
+	Ogólnym rozwiązaniem jest \\
+	$y = ux =  \frac{2x^2}{3} - 2 - \frac{C_{1}}{2x} + C_{2}x $ 
+	
+	
+\end{document}
